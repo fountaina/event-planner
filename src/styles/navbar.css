@@ -3,7 +3,7 @@
 .navbar {
     @apply 
     col-span-1 
-    px-5 
+    px-5 pt-6
     grid grid-rows-11 gap-2.5
 }
   

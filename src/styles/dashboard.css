@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+.main-bar {
+    
+    @apply 
+    col-span-5 
+    pt-6 pl-3 pr-5
+    border-l-1 border-gray-200
+
+}
+  
+.main-bar h1 {
+    @apply font-sans font-bold text-xl
+}
+
+.info-block {
+    @apply 
+    flex justify-between gap-3
+    py-6
+}
+  
+.info {
+    @apply 
+    border-2 border-gray-100
+    p-4
+    w-64
+
+}
+
+.info-block div {
+    @apply font-sans
+}
+
+.box-text {
+    @apply font-medium text-sm text-gray-700
+}
+
+.box-figures {
+    @apply 
+    font-bold text-xl
+    flex
+    pt-3
+}
+
+.percentage-growth {
+    @apply 
+    h-3.5 w-3.5
+    flex
+    text-xs
+    gap-0
+}   
+
+.arrows {
+    @apply object-contain
+}
+
+/* .percentage-growth p {
+    color: #00BA00;
+} */
