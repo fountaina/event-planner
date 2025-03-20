@@ -27,13 +27,13 @@ function Option({icon, text}) {
 function AdminInfo({image, name, email}) {
   // Component for displaying the logged in Administrator's info
   return (
-    <div className="option-container">
-      <div>
+    <div className="admin-block">
+      <div className="admin-image-block">
         <img src={image} alt="user" />
       </div>
       <div>
-        <h3>{name}</h3>
-        <h5>{email}</h5>
+        <h5>{name}</h5>
+        <p className="text-xs">{email}</p>
       </div>
     </div>
   )

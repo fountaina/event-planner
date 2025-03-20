@@ -54,8 +54,13 @@
     /* object-fit: contain; */
 }
 
-.option-container div img {
-    width: auto;
-    height: 20px;
-    /* object-fit: contain; */
+.admin-block {
+    display: flex;
+    align-items: center;
+    gap: 10%;
+}
+
+.admin-image-block {
+    width: 30px;
+    height: 30px;
 }
