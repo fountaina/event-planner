@@ -41,7 +41,7 @@ function AdminInfo({image, name, email}) {
 
 const Navbar = () => {
   return (
-    <div className='navbar'>
+    <div className='navbar left-0 top-0 h-screen w-64 p-5'>
         <div className="profile-circle">
           <div className="outer-circle">
             <div className="profile-image-container">

@@ -17,7 +17,7 @@ const PercentageGrowth = ({percentage}) => {
 
 const Dashboard = () => {
   return (
-    <div className='main-bar'>
+    <div className='main-bar ml-64 p-6 overflow-y-auto h-screen'>
         <h1>Welcome! Here's your summary</h1>
         <div className='info-block'>
             <div className='info'>

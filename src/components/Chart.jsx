@@ -30,7 +30,7 @@ const data = {
         {
             label: "Event Registrations",
             data: [600, 700, 800, 650, 750, 850, 900, 800, 700, 600, 650, 500],
-            backgroundColor: "rgba(53, 162, 235, 0.5)",
+            backgroundColor: "rgba(98, 113, 255, 0.8)",
         },
     ],
 };

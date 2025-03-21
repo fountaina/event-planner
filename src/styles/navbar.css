@@ -1,10 +1,14 @@
 @import 'tailwindcss';
 
 .navbar {
+    position: fixed;
+    width: 16rem; /* 64px */
+    height: 90vh;
+    overflow-y: auto;
     @apply 
-    col-span-1 
-    px-5 pt-6
-    grid grid-rows-11 gap-2.5
+    /* col-span-1  */
+    /* px-5 pt-6 */
+    grid grid-rows-11
 }
   
 .profile-circle {
