@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/dashboard.css';
 import upArrow from "/images/icons/green-arrow.png";
 import downArrown from "/images/icons/red-arrow.png";
+import EventChart from './Chart';
 
 const PercentageGrowth = ({percentage}) => {
     return (
@@ -51,6 +52,13 @@ const Dashboard = () => {
                     <PercentageGrowth percentage={5.0}/>
                 </h3>
             </div>
+        </div>
+        <div className="mid-section">
+            <div className='event-chart'>
+                <h3>Event Registrations per month</h3>
+                <EventChart />
+            </div>
+            <div className='caravel'><h1></h1></div>
         </div>
     </div>
   )

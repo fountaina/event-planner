@@ -54,6 +54,13 @@
     @apply object-contain
 }
 
-/* .percentage-growth p {
-    color: #00BA00;
-} */
+.mid-section {
+    @apply 
+    grid grid-cols-2 col-span-1
+    px-4
+    gap-3
+}
+
+.event-chart h3 {
+    @apply font-bold text-lg
+}
