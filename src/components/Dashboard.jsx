@@ -3,13 +3,14 @@ import '../styles/dashboard.css';
 import upArrow from "/images/icons/green-arrow.png";
 import downArrown from "/images/icons/red-arrow.png";
 import EventChart from './Chart';
+import Carousel from './Carousel';
 
 const PercentageGrowth = ({percentage}) => {
     return (
         <div className='percentage-growth'>
             <img className='arrows' src={percentage > 0 ? upArrow : downArrown} alt="" />
             <p style={percentage > 0 ? {color: "#00BA00"} : {color: "#E50000"}}>
-                {percentage > 0 ? "+" + percentage + "%": percentage + "%" }
+                {percentage > 0 ? "+" + percentage.toFixed(1) + "%": percentage.toFixed(1) + "%" }
             </p>
         </div>
     )
@@ -58,8 +59,9 @@ const Dashboard = () => {
                 <h3>Event Registrations per month</h3>
                 <EventChart />
             </div>
-            <div className='caravel'><h1></h1></div>
+            <Carousel />
         </div>
+
     </div>
   )
 }
