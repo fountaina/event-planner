@@ -34,6 +34,10 @@ const Carousel = () => {
                 <button className='carousel-slide-icon prev'><img src={prevSlideIcon} alt="prev" onClick={handlePrev} /></button>
                 <button className='carousel-slide-icon next'><img src={nextSlideIcon} alt="next" onClick={handleNext} /></button>
             </div>
+            <div className="carousel-text-container">
+                <h3>Latest News & Updates</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ab esse nobis perferendis quos a illo minima quis recusandae porro. Reprehenderit perspiciatis modi ullam odio officiis quibusdam itaque libero nesciunt.</p>
+            </div>
         </div>
     )
 }
