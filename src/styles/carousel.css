@@ -1,26 +1,35 @@
 @import "tailwindcss";
 
 .carousel-image-container {
-    /* position: absolute; */
+    position: relative;
     display: flex;
     @apply 
     /* w-100 h-70 */
     w-full aspect-[16/9]
 }
+
 .carousel-image {
     @apply w-full h-full object-cover rounded-2xl;
 }
 
-.carousel-slide-icon {
+.carousel-icon-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: absolute;
-    @apply w-30 h-30 flex-initial
+    @apply w-full h-full px-2
+}
+.carousel-slide-icon {
+    /* position: absolute; */
+    @apply 
+    w-7 h-7 object-cover
+    cursor-pointer
 }
 
-.next {
+/* .next {
     z-index: 1;
-    @apply m-44
 }
 
 .prev {
     z-index: 2;
-}
+} */
