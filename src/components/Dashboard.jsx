@@ -61,7 +61,39 @@ const Dashboard = () => {
             </div>
             <Carousel />
         </div>
-
+        <div className='bottom-section'>
+            <div>
+                <form action="" className="bottom-section-top">
+                    <div className='search-bar'><input type="text" placeholder='Search...'/></div>
+                    <div className='dropdown-menus'>
+                        <div className="selection-block">
+                            <h3>Date</h3>
+                            <select name="date" id="date">
+                                <option value="Date"></option>
+                            </select>
+                        </div>
+                        <div className="selection-block">
+                            <h3>Status</h3>
+                            <select name="status" id="status">
+                                <option value="status"></option>
+                            </select>
+                        </div>
+                        <div className="selection-block">
+                            <h3>Name</h3>
+                            <select name="name" id="name">
+                                <option value="name"></option>
+                            </select>
+                        </div>
+                        <div className="selection-block">
+                            <h3>Most Recent</h3>
+                            <select name="most-recent" id="most-recent">
+                                <option value="most-recent"></option>
+                            </select>
+                        </div>
+                    </div>
+                </form> 
+            </div>       
+        </div>
     </div>
   )
 }

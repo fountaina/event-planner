@@ -67,3 +67,55 @@
 .event-chart h3 {
     @apply font-bold text-lg
 }
+
+.bottom-section {
+    @apply
+    mt-4 
+}
+
+.bottom-section-top {
+    display: flex;
+    gap: 15%;
+    /* justify-content: space-between; */
+}   
+
+/* .bottom-section-top>div {
+    display: flex;
+    gap: 0.4%;
+    width: 75%;
+    justify-content: space-evenly;
+    @apply pr-4
+} */
+
+.search-bar {
+    width: 25%;
+    @apply 
+    border-2 border-gray-100
+    ml-4
+}
+
+.search-bar input {
+    @apply p-2 text-sm
+}
+
+.dropdown-menus {
+    display: flex;
+    gap: 0.5%;
+    width: 75%;
+    justify-content: end;
+    flex-wrap: nowrap;
+    @apply pr-4
+}
+
+.selection-block {
+    display: flex; /* Change from inline-flex */
+    justify-content: space-between;
+    flex: 0 1 auto; 
+    min-width: 60px; /* Prevent it from shrinking too much */
+    align-items: center;
+    @apply border-2 border-gray-100 p-2;
+}
+
+.selection-block h3 {
+    @apply mr-5 text-sm
+}
