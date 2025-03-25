@@ -119,3 +119,27 @@
 .selection-block h3 {
     @apply mr-5 text-sm
 }
+
+.table-container {
+    @apply 
+    mx-4 mt-4
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    @apply bg-emerald-50
+}
+
+table, th, td {
+    /* border: 1px solid black; */
+    border-collapse: collapse;
+    padding: 8px; 
+    text-align: left; 
+}
+
+th {
+    @apply text-gray-600
+}

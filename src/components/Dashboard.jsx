@@ -92,7 +92,42 @@ const Dashboard = () => {
                         </div>
                     </div>
                 </form> 
-            </div>       
+            </div>
+
+            <div className="table-container">  
+                <table>
+                    <thead>
+                        <tr>
+                        <th className='rounded-tl-lg'>Event Name</th>
+                        <th>Date</th>
+                        <th>Speakers</th>
+                        <th className='rounded-tr-lg'>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cloud Innovation Submit</td>
+                            <td>2024-10-15</td>
+                            <td>Jane Doe</td>
+                            <td>
+                                <div className='bg-emerald-100 rounded-2xl text-emerald-500 justify-items-center inline-block px-3'>
+                                    Completed
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Blockchain REvolution Conference</td>
+                            <td>2024-11-05</td>
+                            <td>Dr Peter Smith</td>
+                            <td>
+                                <div className='bg-indigo-200 rounded-2xl text-indigo-500 justify-items-center inline-block px-3'>
+                                    In-progress
+                                </div>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>     
         </div>
     </div>
   )
