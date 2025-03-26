@@ -9,13 +9,14 @@ import notificationIcon from "/images/icons/bell.png";
 import messageIcon from "/images/icons/email.png";
 import settingsIcon from "/images/icons/settings.png";
 import collapseIcon from "/images/icons/arrow.png";
-import toggleIcon from "/images/icons/switch.png";
-import toogleIconDark from "/images/icons/switch-dark.png";
+import toggleIcon from "/images/icons/switch.svg";
+import toogleIconDark from "/images/icons/switch-dark.svg";
 import userIcon from "/images/icons/user.png";
 import { ThemeContext } from "./App";
 
 function ChangeTheme({text}) {
   const themes = ["light-theme", "dark-theme"];
+  const modeText = ["Dark Mode", "Light Mode"];
   const icons = [toggleIcon, toogleIconDark];
   //theme state from App component using useContext
   const {theme, setTheme} = useContext(ThemeContext);
@@ -24,7 +25,6 @@ function ChangeTheme({text}) {
 
   //handles theme change
   function handleChange() {
-
     setPosition((prevPosition) => (prevPosition + 1) % themes.length); 
   }
 
@@ -42,7 +42,7 @@ function ChangeTheme({text}) {
     <div className='option-container'>
       <img src={icons[position]} alt="" onClick={handleChange} />
       <div>
-        <h3>{text}</h3>
+        <h3>{modeText[position]}</h3>
       </div>
     </div>
   )  

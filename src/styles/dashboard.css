@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 .main-bar {
     margin-left: 16rem; /* Same as navbar width */
     overflow-y: auto;
@@ -17,7 +19,9 @@
 }
 
 .dark-theme {
-    @apply bg-slate-950
+    background-color: #121212;
+    /* @apply bg-slate-950 */
+    @apply text-white bg-slate-950 
 }
   
 .main-bar h1 {
