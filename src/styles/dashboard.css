@@ -11,6 +11,14 @@
     pt-6 pl-3 pr-5
     border-l-1 border-gray-200 */
 }
+
+.light-theme {
+
+}
+
+.dark-theme {
+    @apply bg-slate-950
+}
   
 .main-bar h1 {
     @apply font-sans font-bold text-xl

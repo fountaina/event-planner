@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "../styles/navbar.css";
 import profilePic from "/images/profile-pic.png";
 import homeIcon from "/images/icons/home.png";
@@ -10,7 +10,43 @@ import messageIcon from "/images/icons/email.png";
 import settingsIcon from "/images/icons/settings.png";
 import collapseIcon from "/images/icons/arrow.png";
 import toggleIcon from "/images/icons/switch.png";
+import toogleIconDark from "/images/icons/switch-dark.png";
 import userIcon from "/images/icons/user.png";
+import { ThemeContext } from "./App";
+
+function ChangeTheme({text}) {
+  const themes = ["light-theme", "dark-theme"];
+  const icons = [toggleIcon, toogleIconDark];
+  //theme state from App component using useContext
+  const {theme, setTheme} = useContext(ThemeContext);
+  
+  const [position, setPosition] = useState(0);
+
+  //handles theme change
+  function handleChange() {
+
+    setPosition((prevPosition) => (prevPosition + 1) % themes.length); 
+  }
+
+  /*
+  Update theme when `position` changes
+  keeping setTheme in the dependencies ensures that if it ever 
+  changes due to ThemeContext updates, the effect will still work 
+  correctly. 
+  */
+  useEffect(() => {
+    setTheme(themes[position]); 
+  }, [position, setTheme]);
+
+  return (
+    <div className='option-container'>
+      <img src={icons[position]} alt="" onClick={handleChange} />
+      <div>
+        <h3>{text}</h3>
+      </div>
+    </div>
+  )  
+}
 
 function Option({icon, text}) {
   // Component for the menu options
@@ -57,7 +93,7 @@ const Navbar = () => {
         <Option icon={messageIcon} text="Messages" />
         <Option icon={settingsIcon} text="Settings" />
         <Option icon={collapseIcon} text="Collapse" />
-        <Option icon={toggleIcon} text="Light Mode" />
+        <ChangeTheme  text="Light Mode"  />
 
         <AdminInfo image={userIcon} name="Rudra Devi" email="rudra.devi@gmail.com" />
     </div>
