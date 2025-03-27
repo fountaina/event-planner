@@ -110,7 +110,7 @@ const Dashboard = () => {
                             <td>2024-10-15</td>
                             <td>Jane Doe</td>
                             <td>
-                                <div className='bg-emerald-100 rounded-2xl text-emerald-500 justify-items-center inline-block px-3'>
+                                <div className='status-completed'>
                                     Completed
                                 </div>
                             </td>
@@ -120,7 +120,7 @@ const Dashboard = () => {
                             <td>2024-11-05</td>
                             <td>Dr Peter Smith</td>
                             <td>
-                                <div className='bg-indigo-200 rounded-2xl text-indigo-500 justify-items-center inline-block px-3'>
+                                <div className='status-in-progress'>
                                     In-progress
                                 </div>
                         </td>

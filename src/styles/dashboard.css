@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 .main-bar {
     margin-left: 16rem; /* Same as navbar width */
@@ -13,17 +13,49 @@
     pt-6 pl-3 pr-5
     border-l-1 border-gray-200 */
 }
-
-.light-theme {
-
+.dark-theme .main-bar {
+    @apply border-gray-400
 }
 
 .dark-theme {
     background-color: #121212;
     /* @apply bg-slate-950 */
-    @apply text-white bg-slate-950 
+    @apply text-white
+    /* bg-slate-950  */
+    bg-gray-800
+}
+
+.dark-theme .box-text {
+    @apply text-gray-400
+}
+
+.dark-theme .info {
+    @apply border-gray-400
+}
+
+.dark-theme .search-bar {
+    @apply border-gray-400
 }
   
+.dark-theme .selection-block {
+    @apply border-gray-400
+}
+
+.dark-theme th {
+    @apply bg-emerald-100
+}
+
+.dark-theme .status-completed {
+    @apply
+    bg-emerald-400 
+    text-emerald-800 
+}
+
+.dark-theme .status-in-progress {
+    @apply
+    bg-indigo-500 
+    text-indigo-800 
+}
 .main-bar h1 {
     @apply font-sans font-bold text-xl
 }
@@ -154,4 +186,22 @@ table, th, td {
 
 th {
     @apply text-gray-600
+}
+
+.status-completed {
+    @apply
+    bg-emerald-100 
+    rounded-2xl 
+    text-emerald-500 
+    justify-items-center 
+    inline-block px-3
+}
+
+.status-in-progress {
+    @apply
+    bg-indigo-200 
+    rounded-2xl 
+    text-indigo-500 
+    justify-items-center 
+    inline-block px-3
 }
