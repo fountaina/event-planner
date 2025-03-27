@@ -40,7 +40,7 @@ function ChangeTheme({text}) {
 
   return (
     <div className='option-container'>
-      <img src={icons[position]} alt="" onClick={handleChange} />
+      <img className="cursor-pointer" src={icons[position]} alt="" onClick={handleChange} />
       <div>
         <h3>{modeText[position]}</h3>
       </div>
@@ -52,7 +52,7 @@ function Option({icon, text}) {
   // Component for the menu options
   return (
     <div className='option-container'>
-      <img src={icon} alt="" />
+      <img className="cursor-pointer" src={icon} alt="" />
       <div>
         <h3>{text}</h3>
       </div>
