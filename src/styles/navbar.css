@@ -58,6 +58,16 @@
     /* object-fit: contain; */
 }
 
+.notifications {
+    border-radius: 100%;
+    height: 20px;
+    @apply
+    bg-red-500 
+    px-1.5 
+    text-white 
+    text-sm font-semibold
+}
+
 .admin-block {
     display: flex;
     align-items: center;

@@ -83,7 +83,7 @@ function ChangeTheme({fullsize}) {
   )  
 }
 
-function Option({icon, text, fullsize}) {
+function Option({icon, text, fullsize, notification}) {
   // Component for the menu options
   return (
     <div className='option-container'>
@@ -93,6 +93,7 @@ function Option({icon, text, fullsize}) {
           fullsize ? <h3>{text}</h3> : null
         }
       </div>
+      {notification && <div className="notifications">{notification}</div>}
     </div>
   )
 }
@@ -125,7 +126,7 @@ const Navbar = ({layout, setLayout}) => {
         <Option icon={calendarIcon} text="Events" fullsize={layout.fullsize}/>
         <Option icon={micIcon} text="Speakers" fullsize={layout.fullsize}/>
         <Option icon={reportIcon} text="Reports" fullsize={layout.fullsize}/>
-        <Option icon={notificationIcon} text="Notifications" fullsize={layout.fullsize}/>
+        <Option icon={notificationIcon} text="Notifications" fullsize={layout.fullsize} notification={3} />
         <Option icon={messageIcon} text="Messages" fullsize={layout.fullsize}/>
         <Option icon={settingsIcon} text="Settings" fullsize={layout.fullsize}/>
 
