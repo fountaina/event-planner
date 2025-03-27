@@ -10,7 +10,10 @@
     /* px-5 pt-6 */
     grid grid-rows-11
 }
-  
+.dark-theme .navbar .nav-icons {
+    filter: invert(75%) brightness(100%)
+}
+
 .profile-circle {
     position: relative;
     @apply col-span-1;

@@ -35,7 +35,7 @@ function CollapseNavbar({text, fullsize, setLayout}) {
 
   return (
     <div className='option-container'>
-      <img className="cursor-pointer" onClick={handleChange} src={expansionIcons[position]} alt="" />
+      <img className="cursor-pointer nav-icons" onClick={handleChange} src={expansionIcons[position]} alt="" />
       <div>
         {
           fullsize && <h3>{text}</h3>
@@ -73,7 +73,7 @@ function ChangeTheme({fullsize}) {
 
   return (
     <div className='option-container'>
-      <img className="cursor-pointer" src={icons[position]} alt="" onClick={handleChange} />
+      <img className="cursor-pointer nav-icons" src={icons[position]} alt="" onClick={handleChange} />
       <div>
         {
           fullsize && <h3>{modeText[position]}</h3>
@@ -87,7 +87,7 @@ function Option({icon, text, fullsize, notification}) {
   // Component for the menu options
   return (
     <div className='option-container'>
-      <img className="cursor-pointer" src={icon} alt="" />
+      <img className="cursor-pointer nav-icons" src={icon} alt="" />
       <div>
         {
           fullsize ? <h3>{text}</h3> : null
