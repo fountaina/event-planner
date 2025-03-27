@@ -9,12 +9,51 @@ import notificationIcon from "/images/icons/bell.png";
 import messageIcon from "/images/icons/email.png";
 import settingsIcon from "/images/icons/settings.png";
 import collapseIcon from "/images/icons/arrow.png";
+import revealIcon from "/images/icons/arrow-right.png";
 import toggleIcon from "/images/icons/switch.svg";
 import toogleIconDark from "/images/icons/switch-dark.svg";
 import userIcon from "/images/icons/user.png";
 import { ThemeContext } from "./App";
+import { layoutProperties } from "./App";
 
-function ChangeTheme({text}) {
+
+function CollapseNavbar({text, fullsize, setLayout}) {
+  const expansionIcons = [collapseIcon, revealIcon]; //Array of icons depending on state
+  const [position, setPosition] = useState(0); //State to change position on the array of icons
+
+
+  function handleChange(event) {
+    //function that handles changes when collapse/reveal button is clicked as the case may be
+    setPosition((prevPosition) => {
+      const newPosition = (prevPosition + 1) % expansionIcons.length
+      return newPosition
+    });
+    event.target.src = expansionIcons[position]
+
+    setLayout(layoutProperties[position]); // Changes layout of navbar and dashboard
+    // console.log("Position: " + position);
+
+    // Ensures the position passed into setLayout is latest
+    // useEffect(() => {
+    //   setLayout(layoutProperties[position]);
+    // }, [position]);
+  }
+
+  return (
+    <div className='option-container'>
+      <img className="cursor-pointer" onClick={handleChange} src={collapseIcon} alt="" />
+      <div>
+        {
+          fullsize ? <h3>{text}</h3> : null
+        }
+      </div>
+    </div>
+  )
+}
+
+function ChangeTheme({fullsize}) {
+  // this component changes between dark and light mode
+
   const themes = ["light-theme", "dark-theme"];
   const modeText = ["Dark Mode", "Light Mode"];
   const icons = [toggleIcon, toogleIconDark];
@@ -42,42 +81,45 @@ function ChangeTheme({text}) {
     <div className='option-container'>
       <img className="cursor-pointer" src={icons[position]} alt="" onClick={handleChange} />
       <div>
-        <h3>{modeText[position]}</h3>
+        {
+          fullsize ? <h3>{modeText[position]}</h3> : null
+        }
       </div>
     </div>
   )  
 }
 
-function Option({icon, text}) {
+function Option({icon, text, fullsize}) {
   // Component for the menu options
   return (
     <div className='option-container'>
       <img className="cursor-pointer" src={icon} alt="" />
       <div>
-        <h3>{text}</h3>
+        {
+          fullsize ? <h3>{text}</h3> : null
+        }
       </div>
     </div>
   )
 }
 
-function AdminInfo({image, name, email}) {
+function AdminInfo({image, name, email, fullsize}) {
   // Component for displaying the logged in Administrator's info
   return (
     <div className="admin-block">
       <div className="admin-image-block">
         <img src={image} alt="user" />
       </div>
-      <div>
-        <h5>{name}</h5>
-        <p className="text-xs">{email}</p>
-      </div>
+      {
+        fullsize ? <div><h5>{name}</h5><p className="text-xs">{email}</p></div> : null
+      }
     </div>
   )
 }
 
-const Navbar = () => {
+const Navbar = ({layout, setLayout}) => {
   return (
-    <div className='navbar left-0 top-0 h-screen w-64 p-5'>
+    <div className={layout.navbarLayout}>
         <div className="profile-circle">
           <div className="outer-circle">
             <div className="profile-image-container">
@@ -85,17 +127,18 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <Option icon={homeIcon} text="Home"/>
-        <Option icon={calendarIcon} text="Events" />
-        <Option icon={micIcon} text="Speakers" />
-        <Option icon={reportIcon} text="Reports" />
-        <Option icon={notificationIcon} text="Notifications" />
-        <Option icon={messageIcon} text="Messages" />
-        <Option icon={settingsIcon} text="Settings" />
-        <Option icon={collapseIcon} text="Collapse" />
-        <ChangeTheme  text="Light Mode"  />
+        <Option icon={homeIcon} text="Home" fullsize={layout.fullsize} />
+        <Option icon={calendarIcon} text="Events" fullsize={layout.fullsize}/>
+        <Option icon={micIcon} text="Speakers" fullsize={layout.fullsize}/>
+        <Option icon={reportIcon} text="Reports" fullsize={layout.fullsize}/>
+        <Option icon={notificationIcon} text="Notifications" fullsize={layout.fullsize}/>
+        <Option icon={messageIcon} text="Messages" fullsize={layout.fullsize}/>
+        <Option icon={settingsIcon} text="Settings" fullsize={layout.fullsize}/>
 
-        <AdminInfo image={userIcon} name="Rudra Devi" email="rudra.devi@gmail.com" />
+        <CollapseNavbar text="Collapse" fullsize={layout.fullsize} setLayout={setLayout}/>
+        <ChangeTheme  fullsize={layout.fullsize}/>
+
+        <AdminInfo image={userIcon} name="Rudra Devi" email="rudra.devi@gmail.com" fullsize={layout.fullsize}/>
     </div>
   )
 }

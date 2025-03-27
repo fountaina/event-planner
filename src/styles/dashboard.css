@@ -3,16 +3,14 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 .main-bar {
-    margin-left: 16rem; /* Same as navbar width */
+    /* margin-left: 16rem;  */
     overflow-y: auto;
     height: 100vh;
     padding: 1.5rem;
     border-left: 1px solid #e5e7eb; /* Tailwind gray-200 */
-    /* @apply 
-    col-span-5 
-    pt-6 pl-3 pr-5
-    border-l-1 border-gray-200 */
+    /* @apply ml-64 */
 }
+
 .dark-theme .main-bar {
     @apply border-gray-400
 }

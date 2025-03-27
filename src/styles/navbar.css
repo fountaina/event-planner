@@ -2,7 +2,7 @@
 
 .navbar {
     position: fixed;
-    width: 16rem; /* 64px */
+    /* width: 16rem; 64px */
     height: 90vh;
     overflow-y: auto;
     @apply 

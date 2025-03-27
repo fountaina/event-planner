@@ -4,6 +4,7 @@ import upArrow from "/images/icons/green-arrow.png";
 import downArrown from "/images/icons/red-arrow.png";
 import EventChart from './Chart';
 import Carousel from './Carousel';
+import { layoutProperties } from "./App";
 
 const PercentageGrowth = ({percentage}) => {
     return (
@@ -16,9 +17,9 @@ const PercentageGrowth = ({percentage}) => {
     )
 }
 
-const Dashboard = () => {
+const Dashboard = ({layout, setLayout}) => {
   return (
-    <div className='main-bar ml-64 p-6 overflow-y-auto h-screen'>
+    <div className={layout.dashboardLayout}>
         <h1>Welcome! Here's your summary</h1>
         <div className='info-block'>
             <div className='info'>
