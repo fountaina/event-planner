@@ -4,6 +4,7 @@ import '../styles/index.css'
 import Dashboard from './Dashboard'
 
 export const ThemeContext = createContext();
+export const themes = ["light-theme", "dark-theme"];
 export const layoutProperties = [
   {
     fullsize: true,
@@ -18,7 +19,6 @@ export const layoutProperties = [
 ];
 
 const App = () => {
-  const themes = ["light-theme", "dark-theme"];
   //State for themes
   const [theme, setTheme] = useState(themes[0]);
 
