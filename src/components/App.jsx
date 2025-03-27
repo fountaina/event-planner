@@ -16,7 +16,7 @@ export const layoutProperties = [
     navbarLayout: "navbar left-0 top-0 h-screen w-20 p-5",
     dashboardLayout: "main-bar ml-20 p-6 overflow-y-auto h-screen"
   }
-];
+]; // Style layouts in Twailwindcss, depending on if fullsize is true or not.
 
 const App = () => {
   //State for themes

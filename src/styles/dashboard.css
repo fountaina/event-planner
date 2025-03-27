@@ -12,7 +12,7 @@
 }
 
 .dark-theme .main-bar {
-    @apply border-gray-400
+    @apply border-gray-600
 }
 
 .dark-theme {
@@ -28,15 +28,19 @@
 }
 
 .dark-theme .info {
-    @apply border-gray-400
+    @apply border-gray-600
 }
 
 .dark-theme .search-bar {
-    @apply border-gray-400
+    @apply border-gray-600
 }
   
 .dark-theme .selection-block {
-    @apply border-gray-400
+    @apply border-gray-600
+}
+
+.dark-theme .selection-block h3 {
+    @apply text-gray-400
 }
 
 .dark-theme th {

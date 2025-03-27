@@ -38,7 +38,7 @@ function CollapseNavbar({text, fullsize, setLayout}) {
       <img className="cursor-pointer" onClick={handleChange} src={expansionIcons[position]} alt="" />
       <div>
         {
-          fullsize ? <h3>{text}</h3> : null
+          fullsize && <h3>{text}</h3>
         }
       </div>
     </div>
@@ -76,7 +76,7 @@ function ChangeTheme({fullsize}) {
       <img className="cursor-pointer" src={icons[position]} alt="" onClick={handleChange} />
       <div>
         {
-          fullsize ? <h3>{modeText[position]}</h3> : null
+          fullsize && <h3>{modeText[position]}</h3>
         }
       </div>
     </div>
@@ -105,7 +105,7 @@ function AdminInfo({image, name, email, fullsize}) {
         <img src={image} alt="user" />
       </div>
       {
-        fullsize ? <div><h5>{name}</h5><p className="text-xs">{email}</p></div> : null
+        fullsize && <div><h5>{name}</h5><p className="text-xs">{email}</p></div>
       }
     </div>
   )
